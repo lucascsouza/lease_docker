@@ -28,9 +28,9 @@ DB_PASSWORD=root
 composer install
 ```
 
-4. Run the migrations
+4. Add the app key and run the migrations
 ```
-php artisan migrate
+php artisan key:generate && php artisan migrate
 ```
 
 5.Create an API Credential for the frontend app authentication (**store the token provided by the command, you'll need to use it later**):
