@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src/lease_back:/www
+      - ./src/lease_back:/var/www/html
       - ./site.conf:/etc/nginx/conf.d/site.conf
     links:
       - php
@@ -14,7 +14,7 @@ services:
     build: ./php
     container_name: php-fpm
     volumes:
-      - ./src/lease_back:/www
+      - ./src/lease_back:/var/www/html
     links:
       - db
   db:

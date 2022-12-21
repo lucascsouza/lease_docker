@@ -1,5 +1,4 @@
 .env
 /src
-.idea
-/.idea
+.idea/*
 /mysql/*
