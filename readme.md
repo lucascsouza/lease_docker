@@ -23,15 +23,16 @@ DB_DATABASE=leaseweb
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
-3. Run the migrations
+3. Install composer packages:
+```
+composer install
+```
+
+4. Run the migrations
 ```
 php artisan migrate
 ```
 
-4. Install composer packages:
-```
-composer install
-```
 5.Create an API Credential for the frontend app authentication (**store the token provided by the command, you'll need to use it later**):
 ```
 php artisan api:create-list-frontend-credentials
@@ -40,6 +41,11 @@ php artisan api:create-list-frontend-credentials
 ```
 php artisan import:xls-server-list
 ```
+7. Set the permissions for storage folder:
+```
+chown -R www-data:www-data storage
+```
+
 #### Now your backend should be all set and ready
 
 ### Frontend Application
@@ -56,4 +62,9 @@ npm i
 ```
 npm run dev
 ```
-4. Access the URL provided to see the server list page
+4. Edit your hosts file and add:
+```
+127.0.0.1       leaseweb.local
+```
+
+5. Access the `http://leaseweb.local:5173` to check the application up and runing
